@@ -2,19 +2,19 @@
 :root {
   --main-font: 'Josefin Sans';
   --font-size: 16px;
-  --main-color: #000000;
-  --main-modal-color: #000000d9;
-  --second-color: #000000;
-  --second-modal-color: #000000d9;
-  --third-color: #000000;
-  --third-modal-color: #000000d9;
+  --main-color: #fefff3;
+  --main-modal-color: #87343ed9;
+  --second-color: #a8956d;
+  --second-modal-color: #a8956dd9;
+  --third-color: #ddd9ac;
+  --third-modal-color: #ddd9acd9;
 
-  --form-text-color: #000000;
-  --form-success-color: rgb(0, 0, 0);
-  --form-error-color: rgb(0, 0, 0);
+  --text-color: #87343e;
+  --form-success-color: #000000;
+  --form-error-color: #000000;
   --form-bg-color: #000000;
-  --form-bg-two-color: rgb(0, 0, 0);
-  --form-border-color: rgb(0, 0, 0);
+  --form-bg-two-color: #000000;
+  --form-border-color: #000000;
   --form-placeholder-color: #000000;
 }
 
@@ -50,8 +50,8 @@
       var(--fluid-bp)
   );
 
-  --f-0-min: 16;
-  --f-0-max: 22;
+  --f-0-min: 17;
+  --f-0-max: 19;
   --step-0: calc(
     ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
       var(--fluid-bp)
@@ -109,10 +109,149 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: var(--main-color);
 }
 
 img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--step-4);
+}
+
+h2 {
+  font-size: var(--step-3);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+h4 {
+  font-size: var(--step-1);
+}
+
+/***************** HEADER *********************/
+
+header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.sticky-nav {
+  width: calc(100% - 120px);
+  max-width: calc(100% - 120px);
+  margin: 0px 60px 0px;
+  height: auto;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.menu {
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.menu a {
+  font-size: var(--step-0);
+  font-weight: 700;
+  height: auto;
+  text-decoration-line: none;
+  color: var(--text-color);
+  padding: 0.2rem;
+  margin: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu a:hover {
+  transform: scale(106%);
+}
+
+/***************** MAIN *********************/
+
+main {
+  width: 70%;
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'titular titular'
+    'panel section-proyectos'
+    'panel section-premios'
+    'section-datos section-datos'
+    'footer footer';
+}
+
+/***************** Aside *********************/
+
+.sticky-aside {
+  grid-area: panel;
+  display: flex;
+  justify-content: start;
+  text-align: start;
+}
+
+.sticky-container {
+  height: fit-content;
+  position: sticky;
+  top: 3.24rem;
+}
+
+/***************** Sections *********************/
+
+section {
+  margin-left: 3rem;
+}
+
+.titular {
+  grid-area: titular;
+  margin: 2.5rem 0;
+}
+
+.container-proyectos {
+  grid-area: section-proyectos;
+  height: 100vh;
+}
+
+.container-premios {
+  grid-area: section-premios;
+  height: 100vh;
+}
+
+.container-datos {
+  grid-area: section-datos;
+  height: 100vh;
+}
+
+/***************** FOOTER *********************/
+
+footer {
+  grid-area: footer;
+  width: 70%;
+  max-width: 100%;
+  margin: auto;
 }
