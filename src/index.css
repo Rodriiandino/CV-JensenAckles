@@ -85,8 +85,8 @@
       var(--fluid-bp)
   );
 
-  --f-5-min: 39.81;
-  --f-5-max: 67.14;
+  --f-5-min: 35;
+  --f-5-max: 64;
   --step-5: calc(
     ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
       var(--fluid-bp)
@@ -150,6 +150,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
+  background-color: var(--main-color);
 }
 
 .sticky-nav {
@@ -157,7 +158,6 @@ header {
   max-width: calc(100% - 120px);
   margin: 0px 60px 0px;
   height: auto;
-  background-color: var(--main-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,9 +192,10 @@ header {
 /***************** MAIN *********************/
 
 main {
-  width: 70%;
+  width: 1160px;
   max-width: 100%;
   margin: auto;
+  padding: 0 3rem;
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: auto;
@@ -245,6 +246,43 @@ section {
 .container-datos {
   grid-area: section-datos;
   height: 100vh;
+}
+
+/***************** TITULAR *********************/
+
+.container-titular {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-name {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-name h1 {
+  font-size: var(--step-5);
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
+}
+
+.container-titular h2 {
+  color: var(--text-color);
+  padding: 0.8rem 0 0.8rem 0.8rem;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: underline;
+}
+
+.link-redes {
+  padding: 1rem 0 1rem 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.link-redes a:first-child {
+  padding: 0 1rem 0 0;
 }
 
 /***************** FOOTER *********************/
