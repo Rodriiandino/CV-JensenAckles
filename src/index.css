@@ -2,14 +2,15 @@
 :root {
   --main-font: 'Josefin Sans';
   --font-size: 16px;
-  --main-color: #fefff3;
+  --main-color: #fefff8;
   --main-modal-color: #87343ed9;
-  --second-color: #a8956d;
+  --second-color: #e0d2b2;
   --second-modal-color: #a8956dd9;
   --third-color: #ddd9ac;
   --third-modal-color: #ddd9acd9;
 
   --text-color: #87343e;
+  --text-modal-color: #87343ee0;
   --form-success-color: #000000;
   --form-error-color: #000000;
   --form-bg-color: #000000;
@@ -143,6 +144,11 @@ h4 {
   font-size: var(--step-1);
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 /***************** HEADER *********************/
 
 header {
@@ -197,7 +203,7 @@ main {
   margin: auto;
   padding: 0 3rem;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 27% 73%;
   grid-template-rows: auto;
   grid-template-areas:
     'titular titular'
@@ -222,10 +228,89 @@ main {
   top: 3.24rem;
 }
 
+.info-aside h2 {
+  font-size: var(--step-1);
+}
+
+.info-aside p {
+  margin: 0 0 0.5rem 0;
+}
+
+.info-title {
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--text-modal-color);
+  margin: 0.5rem 0;
+}
+
+.datos-container {
+  margin: 0.6rem 0;
+}
+
+.datos-container:nth-child(odd) {
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+.container-btn {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  width: 75%;
+  height: 5vh;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--second-color);
+  color: var(--text-color);
+  font-weight: 900;
+  padding: 1.9vh 1.5vh 1.5vh 1.5vh;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.anim-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: var(--text-color);
+  transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover:after {
+  width: 100%;
+}
+
+.to-center::after {
+  left: 50%;
+}
+
+.to-center:hover:after {
+  left: 0;
+}
+
+.jensen-img {
+}
+
 /***************** Sections *********************/
 
 section {
   margin-left: 3rem;
+}
+
+section:nth-child(n + 4) {
+  padding-top: 4rem;
 }
 
 .titular {
@@ -252,6 +337,7 @@ section {
 
 .container-titular {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
