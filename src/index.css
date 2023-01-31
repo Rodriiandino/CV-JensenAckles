@@ -396,6 +396,14 @@ section:nth-child(n + 4) {
 
 /***************** Proyectos *********************/
 
+.title-proyectos {
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.705);
+  padding: 0.3rem;
+  padding-top: 1rem;
+  color: var(--second-color);
+}
+
 .galerias {
   display: flex;
   flex-flow: wrap;
@@ -428,6 +436,10 @@ section:nth-child(n + 4) {
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.623);
   font-weight: 600;
+}
+
+.galeria img {
+  height: 270px;
 }
 
 .proyectos {
