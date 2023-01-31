@@ -305,8 +305,8 @@ main {
   left: 0;
 }
 
-.jensen-img {
-}
+/* .jensen-img {
+} */
 
 /***************** Sections *********************/
 
@@ -446,6 +446,29 @@ section:nth-child(n + 4) {
   margin: 2rem 0 2rem 0;
 }
 
+/***************** Premios *********************/
+
+.title-premios {
+  margin: 1rem 0;
+}
+
+.demo {
+  margin-top: 1rem;
+  width: 100%;
+  border: 1px solid #c0c0c0;
+  border-collapse: colapso;
+  border-spacing: 0px;
+}
+.demo th {
+  border: 1px solid #c0c0c0;
+  padding: 5px;
+  background: #f0f0f0;
+}
+.demo td {
+  border: 1px solid #c0c0c0;
+  padding: 5px;
+}
+
 /***************** FOOTER *********************/
 
 footer {
@@ -453,4 +476,85 @@ footer {
   width: 70%;
   max-width: 100%;
   margin: auto;
+}
+
+/***************** Formulario *********************/
+
+.contact-form {
+  --form-ok-color: #64c467;
+  --form-error-color: #ac3d35;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-form input[type='submit'] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
