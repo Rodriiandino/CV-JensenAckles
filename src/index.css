@@ -3,7 +3,7 @@
   --main-font: 'Josefin Sans';
   --font-size: 16px;
   --main-color: #fefff8;
-  --main-modal-color: #87343ed9;
+  --main-modal-color: #fefff8d9;
   --second-color: #e0d2b2;
   --second-modal-color: #a8956dd9;
   --third-color: #ddd9ac;
@@ -110,7 +110,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: var(--main-color);
+  background: var(--main-color);
 }
 
 img,
@@ -318,6 +318,14 @@ section:nth-child(n + 4) {
   padding-top: 4rem;
 }
 
+h3 {
+  color: var(--text-color);
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .titular {
   grid-area: titular;
   margin: 2.5rem 0;
@@ -394,6 +402,9 @@ section:nth-child(n + 4) {
   }
 }
 
+.name-title {
+}
+
 /***************** Proyectos *********************/
 
 .title-proyectos {
@@ -449,6 +460,7 @@ section:nth-child(n + 4) {
 /***************** Premios *********************/
 
 .title-premios {
+  color: var(--text-color);
   margin: 1rem 0;
 }
 
