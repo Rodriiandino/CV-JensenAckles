@@ -2,21 +2,23 @@
 :root {
   --main-font: 'Josefin Sans';
   --font-size: 16px;
-  --main-color: #fefff8;
-  --main-modal-color: #fefff8d9;
+  --main-color: #222222;
+  --main-modal-color: #161616de;
   --second-color: #e0d2b2;
   --second-modal-color: #a8956dd9;
-  --third-color: #ddd9ac;
-  --third-modal-color: #ddd9acd9;
 
-  --text-color: #87343e;
-  --text-modal-color: #87343ee0;
-  --form-success-color: #000000;
-  --form-error-color: #000000;
-  --form-bg-color: #000000;
-  --form-bg-two-color: #000000;
-  --form-border-color: #000000;
-  --form-placeholder-color: #000000;
+  --title-text-color: #972e3a;
+  --text-modal-color: #972e3ae0;
+  --text-color: #fefff8;
+  --second-title-color: #e0d2b2;
+
+  --form-text-color: #fefff8;
+  --form-success-color: #4a0;
+  --form-error-color: #972e3a;
+  --form-bg-color: #2c2c2c;
+  --form-bg-two-color: #111;
+  --form-border-color: #111;
+  --form-placeholder-color: #555555;
 }
 
 :root {
@@ -126,6 +128,7 @@ h4,
 h5 {
   margin: 0;
   padding: 0;
+  color: var(--title-text-color);
 }
 
 h1 {
@@ -147,6 +150,7 @@ h4 {
 p {
   margin: 0;
   padding: 0;
+  color: var(--text-color);
 }
 
 figure {
@@ -253,8 +257,8 @@ main {
 }
 
 .datos-container:nth-child(odd) {
-  border-bottom: 2px solid #000;
-  border-top: 2px solid #000;
+  border-bottom: 2px solid var(--text-color);
+  border-top: 2px solid var(--text-color);
 }
 
 .container-btn {
@@ -273,7 +277,7 @@ main {
   height: 5vh;
   cursor: pointer;
   overflow: hidden;
-  background-color: var(--second-color);
+  background-color: var(--title-text-color);
   color: var(--text-color);
   font-weight: 900;
   padding: 1.9vh 1.5vh 1.5vh 1.5vh;
@@ -390,7 +394,7 @@ h3 {
 
 .logo:hover {
   transform: scale(109%);
-  filter: drop-shadow(0 0 1px var(--text-color)) brightness(1.75);
+  filter: drop-shadow(0 0 1px var(--title-text-color)) brightness(1.75);
 }
 
 @keyframes logo-spin {
@@ -402,17 +406,14 @@ h3 {
   }
 }
 
-.name-title {
-}
-
 /***************** Proyectos *********************/
 
 .title-proyectos {
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.705);
+  background-color: var(--main-modal-color);
   padding: 0.3rem;
   padding-top: 1rem;
-  color: var(--second-color);
+  color: var(--second-title-color);
 }
 
 .galerias {
@@ -426,8 +427,8 @@ h3 {
   max-width: 180px;
   padding-bottom: 0.2rem;
   margin: 1rem;
-  border-bottom: 2px solid var(--second-color);
-  background: #fff;
+  border-bottom: 2px solid var(--title-text-color);
+  background: var(--text-color);
   box-shadow: 0 0 4px #000;
 }
 
@@ -451,6 +452,10 @@ h3 {
 
 .galeria img {
   height: 270px;
+}
+
+.galeria a {
+  color: var(--title-text-color);
 }
 
 .proyectos {
@@ -492,30 +497,46 @@ footer {
 
 /***************** Formulario *********************/
 
+.form {
+  width: 100%;
+  height: 60vh;
+}
+
 .contact-form {
-  --form-ok-color: #64c467;
-  --form-error-color: #ac3d35;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  padding: 1.5rem;
+  background-color: var(--form-bg-color);
+  border: medium solid var(--form-border-color);
 }
 
 .contact-form > * {
+  background-color: var(--form-bg-two-color);
+  color: var(--form-text-color);
+  caret-color: var(--form-placeholder-color);
   padding: 0.5rem;
   margin: 1rem auto;
   display: block;
   width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.contact-form > *::placeholder {
+  color: var(--form-placeholder-color);
 }
 
 .contact-form textarea {
   resize: none;
 }
 
-.contact-form legend,
-.contact-form-response {
-  font-size: 1.5rem;
+.contact-form legend {
+  font-size: var(--step-1);
+  color: var(--title-text-color);
+  margin: 0;
   font-weight: bold;
   text-align: center;
+  background: none;
 }
 
 .contact-form input,
@@ -530,23 +551,32 @@ footer {
   cursor: pointer;
 }
 
-.contact-form *::placeholder {
-  color: #000;
+.contact-form > *[required]:invalid {
+  border-left: thin solid var(--form-error-color);
 }
 
-.contact-form [required]:valid {
-  border: thin solid var(--form-ok-color);
+.contact-form > *[required]:valid {
+  border-left: thin solid var(--form-success-color);
 }
 
-.contact-form [required]:invalid {
-  border: thin solid var(--form-error-color);
+.contact-form input[type='submit'] {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  background-color: var(--title-text-color);
+}
+
+.contact-form input[type='submit']:hover {
+  cursor: pointer;
+  opacity: 0.75;
 }
 
 .contact-form-error {
   margin-top: -1rem;
   font-size: 80%;
   background-color: var(--form-error-color);
-  color: #fff;
+  color: var(--form-text-color);
   transition: all 800ms ease;
 }
 
