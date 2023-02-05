@@ -342,7 +342,8 @@ h3 {
 
 .container-premios {
   grid-area: section-premios;
-  height: 100vh;
+  height: auto;
+  margin-bottom: 3rem;
 }
 
 .container-datos {
@@ -493,6 +494,7 @@ footer {
   width: 70%;
   max-width: 100%;
   margin: auto;
+  height: auto;
 }
 
 /***************** Formulario *********************/
