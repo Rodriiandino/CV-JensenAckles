@@ -5,12 +5,12 @@
   --main-color: #222222;
   --main-modal-color: #161616de;
   --second-color: #e0d2b2;
-  --second-modal-color: #a8956dd9;
+  --second-modal-color: #e0d2b2d9;
 
   --title-text-color: #972e3a;
   --text-modal-color: #972e3ae0;
   --text-color: #fefff8;
-  --second-title-color: #e0d2b2;
+  --second-title-color: #e0d2b2d9;
 
   --form-text-color: #fefff8;
   --form-success-color: #4a0;
@@ -414,7 +414,7 @@ h3 {
   background-color: var(--main-modal-color);
   padding: 0.3rem;
   padding-top: 1rem;
-  color: var(--second-title-color);
+  color: var(--second-color);
 }
 
 .galerias {
@@ -473,18 +473,23 @@ h3 {
 .demo {
   margin-top: 1rem;
   width: 100%;
-  border: 1px solid #c0c0c0;
+  border: 1px solid var(--second-color);
   border-collapse: colapso;
   border-spacing: 0px;
+  text-align: center;
 }
+
 .demo th {
-  border: 1px solid #c0c0c0;
-  padding: 5px;
-  background: #f0f0f0;
+  border: 1px solid var(--second-color);
+  padding: 0.5rem;
+  background: var(--text-color);
 }
+
 .demo td {
-  border: 1px solid #c0c0c0;
-  padding: 5px;
+  color: var(--text-color);
+  border: 1px solid var(--second-color);
+  padding: 0.5rem;
+  background: var(--main-modal-color);
 }
 
 /***************** FOOTER *********************/
