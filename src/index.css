@@ -499,7 +499,81 @@ h3 {
 
 .pictures {
   width: 100%;
-  height: 60vh;
+  height: auto;
+}
+
+.container-picture {
+  padding: 1rem 0;
+}
+
+.picture-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: auto;
+  margin: 0px auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+}
+
+.slick {
+  width: 300px;
+  box-sizing: content-box;
+  padding: 0 18px;
+  display: flex;
+  height: 100%;
+}
+
+.slick img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.slick img:hover {
+  opacity: 0.85;
+}
+
+/* buttons */
+
+.slick-arrow {
+  border-radius: 2rem;
+  background-color: var(--main-modal-color);
+  position: absolute;
+  z-index: 4;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+
+.slick-arrow:focus {
+  outline: 0;
+}
+
+.slick-arrow img {
+  width: 0.8rem;
+  height: 100%;
+}
+
+.slick-prev {
+  left: 0px;
+}
+
+.slick-next {
+  right: 0px;
 }
 
 /***************** FOOTER *********************/
@@ -516,12 +590,12 @@ footer {
 
 .form {
   width: 100%;
-  height: 70vh;
+  height: auto;
 }
 
 .contact-form {
   width: 80%;
-  margin: 3rem auto 2rem auto;
+  margin: 3rem auto 3rem auto;
   padding: 1.5rem;
   background-color: var(--form-bg-color);
   border: medium solid var(--form-border-color);
