@@ -2,6 +2,7 @@ const d = document;
 
 d.addEventListener('DOMContentLoaded', (e) => {
   contactForm();
+  carousel();
 });
 
 function contactForm() {
@@ -54,4 +55,23 @@ function contactForm() {
       }, 3000);
     }, 3000);
   });
+}
+
+function carousel() {
+  const $buttonPrev = d.getElementById('button-prev');
+  const $buttonNext = d.getElementById('button-next');
+  const $track = d.getElementById('track');
+  const $pictureList = d.getElementById('picture-list');
+  const $slick = d.querySelectorAll('.slick');
+
+  const slickWidth = $slick[0].offsetWidth;
+  console.log(slickWidth);
+
+  $buttonPrev.onclick = () => Move(1);
+  $buttonNext.onclick = () => Move(2);
+
+  function Move(value) {
+    const trackWidth = $track.offsetWidth;
+    const listWidth = $pictureList.offsetWidth;
+  }
 }
