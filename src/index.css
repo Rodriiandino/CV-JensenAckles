@@ -518,6 +518,8 @@ h3 {
 }
 
 .slick-track {
+  position: relative;
+  left: 0;
   display: flex;
   justify-content: center;
   transition: 0.5s ease-in-out;
@@ -526,7 +528,7 @@ h3 {
 .slick {
   width: 300px;
   box-sizing: content-box;
-  padding: 0 18px;
+  padding: 0 9px 0 2px;
   display: flex;
   height: 100%;
 }

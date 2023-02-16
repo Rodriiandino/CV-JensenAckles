@@ -64,14 +64,23 @@ function carousel() {
   const $pictureList = d.getElementById('picture-list');
   const $slick = d.querySelectorAll('.slick');
 
-  const slickWidth = $slick[0].offsetWidth;
-  console.log(slickWidth);
+  const slickWidth = $slick[0].offsetWidth; //Consigo el ancho de las imagenes
+
+  function Move(value) {
+    const trackWidth = $track.offsetWidth; //ancho de la galeria completa
+    const listWidth = $pictureList.offsetWidth; //ancho de la galeria visible en pantalla
+
+    $track.style.left == ''
+      ? (leftPosition = $track.style.left = 0)
+      : (leftPosition = parseFloat($track.style.left.slice(0, -2) * -1));
+
+    if (leftPosition < trackWidth - listWidth && value == 2) {
+      $track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
+    } else if (leftPosition > 0 && value == 1) {
+      $track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
+    }
+  }
 
   $buttonPrev.onclick = () => Move(1);
   $buttonNext.onclick = () => Move(2);
-
-  function Move(value) {
-    const trackWidth = $track.offsetWidth;
-    const listWidth = $pictureList.offsetWidth;
-  }
 }
