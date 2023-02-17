@@ -1,8 +1,11 @@
-const d = document;
+const d = document,
+  w = window;
 
 d.addEventListener('DOMContentLoaded', (e) => {
   contactForm();
   carousel();
+  hamburgerMenu('.panel-btn', '.sticky-nav', '.menu a');
+  scrollTopBotton('.proyectos');
 });
 
 function contactForm() {
@@ -83,4 +86,31 @@ function carousel() {
 
   $buttonPrev.onclick = () => Move(1);
   $buttonNext.onclick = () => Move(2);
+}
+
+function hamburgerMenu(panelBtn, panel, menuLink) {
+  const d = document;
+
+  d.addEventListener('click', (e) => {
+    if (e.target.matches(panelBtn) || e.target.matches(`${panelBtn} *`)) {
+      d.querySelector(panel).classList.toggle('is-active');
+      d.querySelector(panelBtn).classList.toggle('is-active');
+    }
+
+    if (e.target.matches(menuLink)) {
+      d.querySelector(panel).classList.remove('is-active');
+      d.querySelector(panelBtn).classList.remove('is-active');
+    }
+  });
+}
+
+function scrollTopBotton(btn) {
+  d.addEventListener('click', (e) => {
+    if (e.target.matches(btn)) {
+      w.scrollTo({
+        behavior: 'smooth',
+        top: 140,
+      });
+    }
+  });
 }

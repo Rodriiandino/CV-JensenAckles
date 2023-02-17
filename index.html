@@ -9,14 +9,23 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+    />
     <link rel="stylesheet" href="src/index.css" />
   </head>
   <body>
+    <button class="panel-btn hamburger hamburger--emphatic" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
     <header>
       <nav class="sticky-nav">
         <div class="menu">
           <a href="#">HOME</a>
-          <a href="#proyectos">PROYECTOS</a>
+          <a class="proyectos">PROYECTOS</a>
           <a href="#premios">PREMIOS</a>
           <a href="#galeria">GALERIA</a>
         </div>
@@ -27,26 +36,27 @@
         <div class="container-titular">
           <div class="container-name">
             <h1 class="name-title">JENSEN ACKLES</h1>
-            <h2><i>Actor.</i></h2>
-          </div>
-          <div class="link-redes">
-            <a
-              href="https://www.instagram.com/jensenackles/?hl=es"
-              target="_blank"
-              ><img
-                class="logo"
-                src="/src/assets/instagram.svg"
-                alt="Jensen-Instagram"
-            /></a>
-            <a
-              href="https://twitter.com/JensenAckles?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-              target="_blank"
-              ><img
-                class="logo"
-                src="/src/assets/twitter.svg"
-                alt="Jensen-Twitter"
-                id="proyectos"
-            /></a>
+            <div class="container-redes">
+              <h2><i>Actor.</i></h2>
+              <div class="link-redes">
+                <a
+                  href="https://www.instagram.com/jensenackles/?hl=es"
+                  target="_blank"
+                  ><img
+                    class="logo"
+                    src="/src/assets/instagram.svg"
+                    alt="Jensen-Instagram"
+                /></a>
+                <a
+                  href="https://twitter.com/JensenAckles?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                  target="_blank"
+                  ><img
+                    class="logo"
+                    src="/src/assets/twitter.svg"
+                    alt="Jensen-Twitter"
+                /></a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -339,7 +349,7 @@
         </article>
       </section>
       <section id="premios" class="container-premios">
-        <h2 class="title-proyectos">Premios</h2>
+        <h2 class="title-proyectos title-premios">Premios</h2>
         <article>
           <div>
             <h4 class="title-premios">Ganados</h4>
@@ -491,7 +501,7 @@
       </section>
       <section id="galeria" class="container-pictures">
         <div class="pictures">
-          <h3 class="title-proyectos">Galeria</h3>
+          <h3 class="title-proyectos title-galeria">Galeria</h3>
           <div class="container-picture">
             <div class="picture-list" id="picture-list">
               <button class="slick-arrow slick-prev" id="button-prev">
@@ -538,7 +548,7 @@
       </section>
       <footer>
         <div id="contactame" class="form">
-          <h3 class="title-proyectos">Contactame</h3>
+          <h3 class="title-proyectos title-form">Contactame</h3>
           <form
             class="contact-form"
             action="https://formsubmit.co/andinorodrigo03@gmail.com"

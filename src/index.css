@@ -110,6 +110,7 @@ html {
 }
 
 body {
+  width: 100%;
   margin: 0;
   overflow-x: hidden;
   background: var(--main-color);
@@ -161,7 +162,7 @@ figure {
 /***************** HEADER *********************/
 
 header {
-  z-index: 999;
+  z-index: 998;
   position: sticky;
   top: 0;
   width: 100%;
@@ -198,6 +199,7 @@ header {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .menu a:hover {
@@ -325,7 +327,7 @@ section:nth-child(n + 4) {
 h3 {
   color: var(--text-color);
   width: 100%;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   text-align: center;
   text-transform: uppercase;
 }
@@ -357,6 +359,7 @@ h3 {
 /***************** TITULAR *********************/
 
 .container-titular {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -365,6 +368,8 @@ h3 {
 .container-name {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  width: 100%;
 }
 
 .container-name h1 {
@@ -373,7 +378,7 @@ h3 {
   white-space: nowrap;
 }
 
-.container-titular h2 {
+.container-redes h2 {
   color: var(--text-color);
   padding: 0.8rem 0 0.8rem 0.8rem;
   display: flex;
@@ -381,7 +386,14 @@ h3 {
   text-decoration: underline;
 }
 
+.container-redes {
+  display: flex;
+}
+
 .link-redes {
+  /* position: absolute;
+  right: 0;
+  bottom: 0; */
   padding: 1rem 0 1rem 1rem;
   display: flex;
   justify-content: end;
@@ -550,7 +562,7 @@ h3 {
 
 .slick-arrow {
   border-radius: 2rem;
-  background-color: var(--main-modal-color);
+  background-color: var(--text-modal-color);
   position: absolute;
   z-index: 4;
   width: 50px;
@@ -589,6 +601,10 @@ footer {
 }
 
 /***************** Formulario *********************/
+
+.title-form {
+  margin-top: 1rem;
+}
 
 .form {
   width: 100%;
@@ -691,5 +707,169 @@ footer {
   100% {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+/* **********     menu-hamburguesa     ********** */
+
+.panel-btn {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  /* **********     Responsive     ********** */
+  .sticky-container {
+    height: fit-content;
+    position: sticky;
+    top: 0rem;
+  }
+
+  .container-proyectos {
+    padding-top: 0rem;
+  }
+
+  section:nth-child(n + 4) {
+    padding-top: 0rem;
+  }
+
+  .title-premios,
+  .title-galeria {
+    margin-top: 1rem;
+  }
+
+  .container-pictures {
+    width: 87%;
+  }
+
+  footer {
+    width: 87%;
+  }
+
+  /* **********     menu-hamburguesa     ********** */
+  .sticky-nav {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    background-color: var(--text-modal-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    transform: translate(-100%, 0);
+  }
+
+  .sticky-nav.is-active {
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu a {
+    font-weight: 600;
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+  }
+
+  .menu a:hover {
+    transform: scale(100%);
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+  }
+
+  .panel-btn {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--title-text-color);
+  }
+
+  .hamburger:hover {
+    opacity: 1;
+  }
+
+  .hamburger.is-active:hover {
+    opacity: 1;
+  }
+}
+
+/* **********     Responsive     ********** */
+@media screen and (max-width: 800px) {
+  .container-premios {
+    margin-left: 0;
+  }
+
+  .container-pictures {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'titular titular'
+      'panel section-proyectos'
+      'section-premios section-premios'
+      'galeria galeria'
+      'footer footer';
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .container-proyectos {
+    margin-left: 0;
+  }
+
+  main {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'titular'
+      'panel'
+      'section-proyectos'
+      'section-premios'
+      'galeria'
+      'footer';
   }
 }
