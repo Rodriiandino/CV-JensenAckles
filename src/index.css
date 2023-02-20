@@ -111,6 +111,7 @@ html {
 
 body {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
   background: var(--main-color);
@@ -372,7 +373,7 @@ h3 {
   width: 100%;
 }
 
-.container-name h1 {
+.name-title {
   font-size: var(--step-5);
   letter-spacing: 0.2rem;
   white-space: nowrap;
@@ -486,6 +487,7 @@ h3 {
 }
 
 .demo {
+  font-size: var(--step--1);
   margin-top: 1rem;
   width: 100%;
   border: 1px solid var(--second-color);
@@ -836,6 +838,10 @@ footer {
     width: 100%;
   }
 
+  .demo {
+    font-size: var(--step--2);
+  }
+
   footer {
     width: 100%;
   }
@@ -844,7 +850,7 @@ footer {
     width: 100%;
     max-width: 100%;
     margin: auto;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
     display: grid;
     grid-template-columns: 25% 75%;
     grid-template-rows: auto;
@@ -858,6 +864,10 @@ footer {
 }
 
 @media screen and (max-width: 760px) {
+  .name-title {
+    font-size: var(--step-4);
+  }
+
   .container-proyectos {
     margin-left: 0;
   }
@@ -871,5 +881,11 @@ footer {
       'section-premios'
       'galeria'
       'footer';
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .name-title {
+    font-size: var(--step-3);
   }
 }
