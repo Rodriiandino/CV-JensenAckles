@@ -312,8 +312,9 @@ main {
   left: 0;
 }
 
-/* .jensen-img {
-} */
+.container-img {
+  padding-bottom: 1rem;
+}
 
 /***************** Sections *********************/
 
@@ -838,6 +839,7 @@ footer {
     width: 100%;
   }
 
+  /* **********     tabla resposive     ********** */
   .demo {
     font-size: var(--step--2);
   }
@@ -864,6 +866,30 @@ footer {
 }
 
 @media screen and (max-width: 760px) {
+  /* **********     imagen principal de jensen     ********** */
+
+  .sticky-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-img {
+    min-width: 305px;
+    max-width: 340px;
+    flex: 1;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .container-datos {
+    min-width: 300px;
+    flex: 1;
+    width: 100%;
+  }
+
+  /* **********    Cambios esteticos     ********** */
   .name-title {
     font-size: var(--step-4);
   }
